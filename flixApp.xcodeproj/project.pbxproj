@@ -15,6 +15,7 @@
 		3631D9FC25D9F9580087DDE3 /* flixAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631D9FB25D9F9580087DDE3 /* flixAppTests.swift */; };
 		3631DA0725D9F9580087DDE3 /* flixAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631DA0625D9F9580087DDE3 /* flixAppUITests.swift */; };
 		3631DA1B25DA01D30087DDE3 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631DA1A25DA01D30087DDE3 /* MoviesViewController.swift */; };
+		3631DA2025E091CF0087DDE3 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631DA1F25E091CF0087DDE3 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3631DA0625D9F9580087DDE3 /* flixAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flixAppUITests.swift; sourceTree = "<group>"; };
 		3631DA0825D9F9580087DDE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3631DA1A25DA01D30087DDE3 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		3631DA1F25E091CF0087DDE3 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3631D9EF25D9F9580087DDE3 /* LaunchScreen.storyboard */,
 				3631D9F225D9F9580087DDE3 /* Info.plist */,
 				3631DA1A25DA01D30087DDE3 /* MoviesViewController.swift */,
+				3631DA1F25E091CF0087DDE3 /* MovieCell.swift */,
 			);
 			path = flixApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				3631D9E525D9F9550087DDE3 /* AppDelegate.swift in Sources */,
 				3631D9E725D9F9550087DDE3 /* SceneDelegate.swift in Sources */,
+				3631DA2025E091CF0087DDE3 /* MovieCell.swift in Sources */,
 				3631DA1B25DA01D30087DDE3 /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
