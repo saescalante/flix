@@ -26,19 +26,14 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
            // This will run when the network request returns
-           if let error = error {
+            if let error = error {
               print(error.localizedDescription)
-           } else if let data = data {
-              let dataDictionary = try!
+            } else if let data = data { let dataDictionary = try!
                 JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-              self.movies = dataDictionary["results"] as! [[String:Any]]
+            self.movies = dataDictionary["results"] as! [[String:Any]]
             self.tableView.reloadData()
-              print(dataDictionary)
-              // TODO: Get the array of movies
-              // TODO: Store the movies in a property to use elsewhere
-              // TODO: Reload your table view data
-
-           }
+            print(dataDictionary)
+            }
         }
         task.resume()
     }
@@ -61,7 +56,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let posterPath = movie["poster_path"] as! String
         let posterUrl = URL(string: baseUrl + posterPath)
         
-        cell.posterView.af_setImage(withURL: posterUrl!)
+        cell.posterView.af.setImage(withURL: posterUrl!)
         
         
         return cell
@@ -69,14 +64,26 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        print("Loading details screen");
+        // find selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        //pass selected movie to details view controller
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie
+        //deselect selected movie
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
     }
-    */
+    
 
 }
