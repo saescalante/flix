@@ -22,11 +22,14 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        let width = view.frame.size.width / 3
-        layout.itemSize = CGSize(width: width, height: width * 1.5)
-        
-        layout.minimumLineSpacing = 40
-        layout.minimumInteritemSpacing = 0
+        //Layout 
+        //space between rows
+        layout.minimumLineSpacing = 4
+        // space between items
+        layout.minimumInteritemSpacing = 4
+        // 2 spaces between 3 items in grid
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        layout.itemSize = CGSize(width: width, height: width * 3/2)
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/464052/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -44,9 +47,6 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
             }
         }
         task.resume()
-
-        // Do any additional setup after loading the view.
-  
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
